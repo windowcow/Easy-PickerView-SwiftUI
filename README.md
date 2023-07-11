@@ -1,9 +1,9 @@
 # Easy-to-use PickerView
 ## Create an enum that conforms to the Labeled Protocol
-
+If you're not sure, please follow the provided format carefully.
 
 ```Swift
-enum ExamplePickerOption2: Labeled{
+enum ExamplePickerOption2: Labeled {
     typealias TitleType = AnyView
     typealias IconType = AnyView
     
