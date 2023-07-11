@@ -1,6 +1,4 @@
 # Easy-to-use PickerView
-
-## Labeled Protocol을 준수하는 enum을 만들고
 ## Create an enum that conforms to the Labeled Protocol
 
 
