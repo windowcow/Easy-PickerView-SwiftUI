@@ -38,44 +38,44 @@ enum ExamplePickerOption: Labeled {
     }
 }
 
-enum ExamplePickerOption2: Labeled {
+enum ExamplePickerOption2: Labeled{
     typealias TitleType = AnyView
     typealias IconType = AnyView
     
     case Dog
     case Cat
-    case Cow
-    case Tiger
-    case Lion
+    case Bird
+    case Lizard
+    case Ant
     
     var label: Label<TitleType, IconType> {
         switch self {
         case .Dog:
             Label(
                 title: { AnyView(EmptyView()) },
-                icon: { AnyView(Image(systemName: "book.pages")) }
+                icon: { AnyView(Image(systemName: "dog")) }
             )
 
         case .Cat:
             Label(
                 title: { AnyView(EmptyView()) },
-                icon: { AnyView(Image(systemName: "book.pages")) }
+                icon: { AnyView(Image(systemName: "cat")) }
             )
             
-        case .Cow:
+        case .Bird:
             Label(
                 title: { AnyView(EmptyView()) },
-                icon: { AnyView(Image(systemName: "rectangle.on.rectangle.angled")) }
+                icon: { AnyView(Image(systemName: "bird")) }
             )
-        case .Tiger:
+        case .Lizard:
             Label(
                 title: { AnyView(EmptyView()) },
-                icon: { AnyView(Image(systemName: "rectangle.on.rectangle.angled")) }
+                icon: { AnyView(Image(systemName: "lizard")) }
             )
-        case .Lion:
+        case .Ant:
             Label(
                 title: { AnyView(EmptyView()) },
-                icon: { AnyView(Image(systemName: "rectangle.on.rectangle.angled")) }
+                icon: { AnyView(Image(systemName: "ant")) }
             )
         }
         

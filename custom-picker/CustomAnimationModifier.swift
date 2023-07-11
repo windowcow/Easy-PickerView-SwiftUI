@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CustomAnimationMakerModifier<E: Equatable>: ViewModifier {
+struct CustomAnimationModifier<E: Equatable>: ViewModifier {
     var currentItemOptionValue: E
     @Binding var selectedOptionValue: E
     var isSelected: Bool {
@@ -13,23 +13,13 @@ struct CustomAnimationMakerModifier<E: Equatable>: ViewModifier {
     }
     
     func body(content: Content) -> some View {
-        //////////////////////// Edit Below to make animation //////////////////////////
-//          IMPORTANT NOT TO EDIT .onTabGesture WITHOUT CONSIDERATION 
-//        content
-//        .onTapGesture {
-//            isSelected ? {}() : {selectedOptionValue = currentItemOptionValue}()
-//        }
-        //////////////////////// Edit Upper make animation  //////////////////////////
-//
-        
-        
 //        Example.
         VStack {
             ZStack {
                 content
                     .padding()
                     .foregroundStyle( isSelected ? .green : .black )
-                    .symbolEffect(.bounce, value: isSelected)
+                    .symbolEffect(.bounce.up, value: isSelected)
                     .bold(isSelected)
                     .padding(3)
                     .scaleEffect(isSelected ? 2.0 : 1.0)
@@ -43,14 +33,13 @@ struct CustomAnimationMakerModifier<E: Equatable>: ViewModifier {
             }
             .frame(width: 100, height: 100)
             
-            Rectangle().frame(width: isSelected ? 150: 0, height: 5)
+            Rectangle().frame(width: isSelected ? 150 : 0, height: 5)
                 .animation(.easeInOut, value: isSelected)
 
         }
+//          IMPORTANT NOT TO EDIT .onTabGesture WITHOUT CONSIDERATION
         .onTapGesture {
             isSelected ? {}() : {selectedOptionValue = currentItemOptionValue}()
         }
-
-        
     }
 }

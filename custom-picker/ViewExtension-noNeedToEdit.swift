@@ -9,6 +9,6 @@ import SwiftUI
 
 extension View {
     func customAnimation<E: Equatable>(myValue myVal: E, selectedValue selectedVal: Binding<E>) -> some View {
-        modifier(CustomAnimationMakerModifier(myValue: myVal, selectedValue: selectedVal))
+        modifier(CustomAnimationModifier(myValue: myVal, selectedValue: selectedVal))
     }
 }
