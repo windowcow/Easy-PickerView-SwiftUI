@@ -38,7 +38,7 @@ enum ExamplePickerOption: Labeled {
     }
 }
 
-enum ExamplePickerOption2: Labeled {
+enum ExamplePickerOption2: Labeled{
     typealias TitleType = AnyView
     typealias IconType = AnyView
     
