@@ -50,36 +50,26 @@ enum ExamplePickerOption2: Labeled {
 ## and simply implement the animation you want to use.
 
 ```swift
-func body(content: Content) -> some View {
-//        Example.
-        VStack {
-            ZStack {
-                content
-                    .padding()
-                    .foregroundStyle( isSelected ? .green : .black )
-                    .symbolEffect(.bounce.up, value: isSelected)
-                    .bold(isSelected)
-                    .padding(3)
-                    .scaleEffect(isSelected ? 2.0 : 1.0)
-                    .animation(.bouncy, value: isSelected)
+struct ExampleCustomAnimationModifier<L: Labeled>: CustomAnimationModifierProtocol {
+    @Binding var selectedCase: L
+    var itself: L
+    var caseIterableEnum: L.Type
 
-                Circle()
-                    .stroke(.green, lineWidth: 5)
-                    .frame(width: isSelected ? 100 : 0)
-                    .animation(.easeInOut, value: isSelected)
-
-            }
-            .frame(width: 100, height: 100)
-            
-            Rectangle().frame(width: isSelected ? 150 : 0, height: 5)
-                .animation(.easeInOut, value: isSelected)
-
-        }
-//          IMPORTANT NOT TO EDIT .onTabGesture WITHOUT CONSIDERATION
-        .onTapGesture {
-            isSelected ? {}() : {selectedOptionValue = currentItemOptionValue}()
-        }
+    init(selected: Binding<L>, itself: L, caseIterableEnum: L.Type) {
+        self._selectedCase = selected
+        self.itself = itself
+        self.caseIterableEnum = caseIterableEnum
     }
+    
+    // EDIT BELOW TO EDD ANIMATION
+    func body(content: Content) -> some View {
+        content
+
+            .scaleEffect(selectedCase == itself ? 2.0 : 1.0)
+            
+    }
+}
+
 ```
 
 ## It's that easy to use.
@@ -95,7 +85,7 @@ struct ContentView: View {
             Spacer()
 
             HStack {
-                EasyToUseCustomPicker(selectedOption: $p, caseIterableEnum: ExamplePickerOption2.self)
+                EasyToUseCustomPicker(selectedOption: $p, caseIterableEnum: ExamplePickerOption2.self, animationModifier: ExampleCustomAnimationModifier.self)
             }
             
             Spacer()
@@ -105,6 +95,7 @@ struct ContentView: View {
         }
     }
 }
+
 ```
 
 ## Here is the result.
