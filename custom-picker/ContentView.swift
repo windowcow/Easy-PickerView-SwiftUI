@@ -13,7 +13,7 @@ struct ContentView: View {
             Spacer()
 
             HStack {
-                EasyToUseCustomPicker(selectedOption: $p, caseIterableEnum: ExamplePickerOption2.self)
+                EasyToUseCustomPicker(selectedOption: $p, caseIterableEnum: ExamplePickerOption2.self, animationModifier: ExampleCustomAnimationModifier.self)
             }
             
             Spacer()
