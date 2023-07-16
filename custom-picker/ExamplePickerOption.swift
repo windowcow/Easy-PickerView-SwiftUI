@@ -15,7 +15,7 @@ enum ExamplePickerOption: Labeled {
     case Summary
     case Quiz
     
-    var label: Label<TitleType, IconType> {
+    @ViewBuilder var label: some View {
         switch self {
         case .Source:
             Label(
@@ -48,7 +48,7 @@ enum ExamplePickerOption2: Labeled{
     case Lizard
     case Ant
     
-    var label: Label<TitleType, IconType> {
+    @ViewBuilder var label: some View {
         switch self {
         case .Dog:
             Label(
