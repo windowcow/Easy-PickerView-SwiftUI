@@ -12,7 +12,6 @@ struct ExampleCustomAnimationModifier<L: Labeled>: CustomAnimationModifierProtoc
     }
     func body(content: Content) -> some View {
         content
-
             .scaleEffect(selectedCase == itself ? 2.0 : 1.0)
             
     }

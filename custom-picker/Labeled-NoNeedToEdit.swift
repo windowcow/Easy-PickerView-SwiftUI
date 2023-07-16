@@ -8,8 +8,7 @@
 import SwiftUI
 
 protocol Labeled: CaseIterable, Hashable {
-    associatedtype TitleType: View
-    associatedtype IconType: View
+    associatedtype LabelType: View
     
-    var label: Label<TitleType, IconType> { get }
+    @ViewBuilder var label: LabelType { get }
 }

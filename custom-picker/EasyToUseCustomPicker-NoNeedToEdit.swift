@@ -22,7 +22,9 @@ struct EasyToUseCustomPicker<E: Labeled, VM: CustomAnimationModifierProtocol> : 
             
             // you might need below.
                 .onTapGesture {
-                    selectedCase = opt
+                    withAnimation(.spring) {
+                        selectedCase = opt
+                    }
                 }
         }
     }
