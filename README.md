@@ -99,6 +99,6 @@ struct ContentView: View {
 ```
 
 ## Here is the result.
-![Simulator Screen Recording - iPad Pro (12 9-inch) (6th generation) - 2023-07-11 at 20 11 04](https://github.com/windowcow/Easy-PickerView-SwiftUI/assets/65646883/c177157b-effd-4565-8564-923b01a19119)
 
+![Simulator Screen Recording - iPad Pro (12 9-inch) (6th generation) - 2023-07-19 at 19 10 23](https://github.com/windowcow/Easy-PickerView-SwiftUI/assets/65646883/94d75a6e-c6fb-48cf-b25e-c830797499df)
 
