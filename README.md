@@ -98,5 +98,6 @@ struct ContentView: View {
 
 ## Here is the result.
 
-![Simulator Screen Recording - iPad Pro (12 9-inch) (6th generation) - 2023-07-19 at 19 10 23](https://github.com/windowcow/Easy-PickerView-SwiftUI/assets/65646883/94d75a6e-c6fb-48cf-b25e-c830797499df)
+![Simulator Screen Recording - iPad Pro (12 9-inch) (6th generation) - 2023-07-19 at 19 14 49](https://github.com/windowcow/Easy-PickerView-SwiftUI/assets/65646883/bc2bda3a-cdb7-4bb4-8cdb-729cddb5e800)
+
 
