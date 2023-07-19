@@ -7,10 +7,7 @@
 
 import SwiftUI
 
-enum ExamplePickerOption2: Labeled{
-    typealias TitleType = AnyView
-    typealias IconType = AnyView
-    
+enum ExamplePickerOption: Labeled{
     case Dog
     case Cat
     case Bird

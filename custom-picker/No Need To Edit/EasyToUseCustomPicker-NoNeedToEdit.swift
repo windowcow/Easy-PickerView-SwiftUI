@@ -6,13 +6,16 @@ struct EasyToUseCustomPicker<E: Labeled, VM: CustomAnimationModifierProtocol> : 
     private let caseIterableEnum: E.Type
     
     private let animationModifier: VM.Type
-    
+    @Namespace private var namespace
     
     init(selectedOption: Binding<E>, caseIterableEnum: E.Type, animationModifier: VM.Type) {
         self.caseIterableEnum = caseIterableEnum
         self._selectedCase = selectedOption
         self.animationModifier = animationModifier
     }
+    
+    @State var rect: CGRect = CGRect()
+
     
     var body: some View {
         // Maybe you can change this to other Stacks
@@ -21,12 +24,27 @@ struct EasyToUseCustomPicker<E: Labeled, VM: CustomAnimationModifierProtocol> : 
                 .modifier(animationModifier.init(selected: $selectedCase, itself: opt, caseIterableEnum: caseIterableEnum.self) )
             
             // you might need below.
+                
+                .overlay {
+                    if opt == selectedCase {
+                        Circle()
+                            .scale(3)
+
+                            .stroke(.blue, lineWidth: 5)
+                            .matchedGeometryEffect(id: "circle", in: namespace)
+                    }
+                }
                 .onTapGesture {
-                    withAnimation(.spring) {
+                    withAnimation(.spring(Spring(duration: 0.5, bounce: 0.4))) {
                         selectedCase = opt
                     }
                 }
         }
     }
 }
+
+#Preview {
+    ContentView()
+}
+
 
