@@ -15,7 +15,7 @@ struct ContentView: View {
             HStack {
                 EasyToUseCustomPicker(selectedOption: $p, caseIterableEnum: ExamplePickerOption2.self, animationModifier: ExampleCustomAnimationModifier.self)
             }
-            
+
             Spacer()
             Text("\(p.hashValue)")
             Spacer()
